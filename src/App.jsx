@@ -1,14 +1,10 @@
-import { useState } from 'react'
-
-
+import Footer from './components/Footer.jsx';
 
 function App() {
-
-
   return (
-    <div>
-
-    </div>
+    <>
+        <Footer />
+    </>
   )
 }
 
