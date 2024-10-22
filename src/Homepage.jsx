@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import DiaryEntryCard from './DiaryEntryCard';
-import AddEntryModal from './AddEntryModal';
+import DiaryEntryCard from './components/DiaryEntryCard.jsx';
+import AddEntryModal from './components/AddEntryModal.jsx';
 
   // This is the main page that will display all the diary entries and handle adding new entries
   

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EntryModal from './EntryModal';
+import EntryModal from './EntryModal.jsx';
 
 
 // This component will display individual diary entries as cards.
