@@ -2,7 +2,7 @@ import AddEntryModal from './AddEntryModal.jsx';
 
 const Header = ({showModal, addEntry, openModal, closeModal}) => {
     return (
-        <header className="flex justify-center items-center w-full">
+        <header className="flex justify-center items-center w-full fixed p-4 z-40">
             <nav className="navbar bg-base-100 max-w-[1200px]">
                 <div className="navbar-start">
                     <div className="dropdown">
