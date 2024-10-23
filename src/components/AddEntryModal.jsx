@@ -38,11 +38,6 @@ const AddEntryModal = ({ closeModal, addEntry, entry }) => {
     addEntry(updatedEntry); // Call either add or update
   };
 
-
-
-
-
-
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-3/4 md:w-1/2">

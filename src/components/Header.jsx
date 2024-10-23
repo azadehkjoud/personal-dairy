@@ -1,8 +1,9 @@
 import AddEntryModal from './AddEntryModal.jsx';
+import Themecontroller from './Themecontroller.jsx';
 
 const Header = ({showModal, addEntry, openModal, closeModal}) => {
     return (
-        <header className="flex justify-center items-center w-full">
+        <header className="flex justify-center items-center w-full fixed p-4 z-40">
             <nav className="navbar bg-base-100 max-w-[1200px]">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -22,7 +23,7 @@ const Header = ({showModal, addEntry, openModal, closeModal}) => {
                 </div>
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle hidden sm:block">
-                        <i className="fa-solid fa-magnifying-glass"></i>
+                        <Themecontroller />
                     </button>
                     <button onClick={openModal} className="btn btn-ghost btn-circle">
                         <i className="fa-solid fa-feather-pointed"></i>

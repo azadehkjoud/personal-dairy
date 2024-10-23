@@ -7,9 +7,6 @@ const DiaryManager = () => {
     { id: 2, title: 'Second Entry', date: '2024-10-22', imageUrl: '', content: 'This is the second entry.' },
   ]);
 
- 
- 
-
   return (
     <div>
       {/* Render each entry using DiaryEntryCard */}
