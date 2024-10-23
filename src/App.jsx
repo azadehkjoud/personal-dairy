@@ -23,10 +23,20 @@ function App() {
         closeModal();
     };
 
+
+ // Function to update an entry when it's edited
+ const updateEntry = (updatedEntry) => {
+    setEntries((prevEntries) =>
+      prevEntries.map((entry) =>
+        entry.id === updatedEntry.id ? updatedEntry : entry
+      )
+    );
+
+}
     return (
         <div className="flex flex-col">
-            <Header addEntry={addEntry} showModal={showModal} openModal={openModal} closeModal={closeModal} />
-            <Homepage entries={entries} />
+            <Header addEntry={addEntry}  showModal={showModal} openModal={openModal} closeModal={closeModal} />
+            <Homepage entries={entries} updateEntry={updateEntry} />
             <Footer />
         </div>
     );
