@@ -6,14 +6,12 @@ const Hero = () => {
 
     useEffect(() => {
 
-        const url = "https://zenquotes.io/api/random";
+        const url = "https://api.paperquotes.com/apiv1/qod/?lang=en";
         const proxy = "https://cors-anywhere.herokuapp.com/";
 
-        axios(proxy + url)
+        axios(url)
             .then((response) => {
-                console.log(response.data);
                 setQuote(response.data);
-                console.log(quote);
             })
             .catch((error) => {
                 console.log(error);
@@ -35,9 +33,9 @@ const Hero = () => {
                     {quote && (
                         <div className="chat chat-start absolute right-4 max-w-64 bottom-10">
                             <div className="chat-header">
-                                {quote[0].a}
+                                {quote.author}
                             </div>
-                            <div className="chat-bubble chat-bubble-accent">{quote[0].q}</div>
+                            <div className="chat-bubble chat-bubble-accent">{quote.quote}</div>
                         </div>
                     )}
                 </div>

@@ -1,4 +1,5 @@
 import AddEntryModal from './AddEntryModal.jsx';
+import Themecontroller from './Themecontroller.jsx';
 
 const Header = ({showModal, addEntry, openModal, closeModal}) => {
     return (
@@ -22,7 +23,7 @@ const Header = ({showModal, addEntry, openModal, closeModal}) => {
                 </div>
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle hidden sm:block">
-                        <i className="fa-solid fa-magnifying-glass"></i>
+                        <Themecontroller />
                     </button>
                     <button onClick={openModal} className="btn btn-ghost btn-circle">
                         <i className="fa-solid fa-feather-pointed"></i>
