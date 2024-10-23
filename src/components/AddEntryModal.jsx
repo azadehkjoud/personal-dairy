@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 // This modal will handle adding new diary entries.
 const AddEntryModal = ({ closeModal, addEntry }) => {
   const [title, setTitle] = useState('');

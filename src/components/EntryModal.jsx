@@ -1,5 +1,4 @@
 // This modal will show the full diary entry when a card is clicked.
-
 const EntryModal = ({entry, closeModal, onEdit}) => {
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-40">

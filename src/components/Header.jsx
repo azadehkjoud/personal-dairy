@@ -1,5 +1,4 @@
 import AddEntryModal from './AddEntryModal.jsx';
-import React from 'react';
 
 const Header = ({showModal, addEntry, openModal, closeModal}) => {
     return (
