@@ -22,16 +22,24 @@ const AddEntryModal = ({ closeModal, addEntry, entry }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!title || !date || !imageUrl || !content) {
-      alert("Please fill all fields");
+    // If no date is selected, set date to today's date
+    const currentDate = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    const finalDate = date || currentDate; // Use selected date or today's date
+
+    // If the image URL is empty, use a default placeholder image
+    const finalImageUrl = imageUrl || 'https://via.placeholder.com/150'; // Set your desired placeholder URL here
+
+    // Validate input
+    if (!title || !finalImageUrl || !content) {
+      alert("Please fill all fields except the date.");
       return;
     }
 
     const updatedEntry = {
       ...entry, // Keep the same ID or other unchanged fields
       title,
-      date,
-      imageUrl,
+      date: finalDate,
+      imageUrl: finalImageUrl,
       content,
     };
 
