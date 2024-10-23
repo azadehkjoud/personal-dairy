@@ -23,7 +23,7 @@ const Hero = () => {
     return (
         <section
             id="hero"
-            className="hero min-h-screen w-screen border-b-4 border-accent mb-4"
+            className="hero min-h-screen max-w-screen border-b-4 border-accent mb-4"
             style={{
                 backgroundImage: "url(https://picsum.photos/1200/800)",
             }}>
