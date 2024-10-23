@@ -27,7 +27,7 @@ const DiaryEntryCard = ({ entry, updateEntry }) => {
         <div className="card bg-base-100 max-w-96 shadow-xl hover:scale-105 transform transition duration-300 ease-in-out">
             <figure className="overflow-hidden rounded-br-xl rounded-tl-xl p-5">
                 <img
-                    src={entry.imageUrl || 'https://via.placeholder.com/150'}
+                    src={entry.imageUrl}
                     alt={entry.title}
                     className="max-h-64 w-full object-cover rounded-br-xl rounded-tl-xl"
                 />
@@ -35,7 +35,9 @@ const DiaryEntryCard = ({ entry, updateEntry }) => {
             <div className="card-body">
                 <h2 className="card-title">
                     {entry.title}
-                    <div className="badge badge-secondary">NEW</div>
+                    {entry.date ===  new Date().toISOString().split('T')[0] ? (
+                        <div className="badge badge-secondary absolute top-3 right-3">NEW</div>) : ''}
+
                 </h2>
                 <p>{entry.date}</p>
                 <button className="btn btn-primary" onClick={openEntryModal}>

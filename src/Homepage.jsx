@@ -5,7 +5,7 @@ import Hero from './components/Hero.jsx';
 const Homepage = ({entries, updateEntry}) => {
     return (
         <>
-            <Hero />
+            <Hero entries={entries} />
             <main className="self-center w-full max-w-[80rem]">
                 <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                     {entries.map((entry, index) => (
