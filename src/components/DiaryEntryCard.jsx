@@ -1,10 +1,8 @@
-
-
-// This component will display individual diary entries as cards.
 import { useState } from 'react';
 import EntryModal from './EntryModal.jsx';
 import AddEntryModal from './AddEntryModal.jsx';
 
+// This component will display individual diary entries as cards.
 const DiaryEntryCard = ({ entry, updateEntry }) => {
     const [showEntryModal, setShowEntryModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);

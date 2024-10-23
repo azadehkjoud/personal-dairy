@@ -8,7 +8,7 @@ export default {
     extend: {},
   },
   daisyui: {
-    themes: ["businss", "autumn"],
+    themes: ["business", "autumn"],
   },
   plugins: [
     require('daisyui'),

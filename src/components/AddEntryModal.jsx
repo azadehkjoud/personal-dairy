@@ -1,8 +1,6 @@
-
-
-// This modal will handle adding new diary entries.
 import { useState, useEffect } from 'react';
 
+// This modal will handle adding new diary entries.
 const AddEntryModal = ({ closeModal, addEntry, entry }) => {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
@@ -27,7 +25,7 @@ const AddEntryModal = ({ closeModal, addEntry, entry }) => {
     const finalDate = date || currentDate; // Use selected date or today's date
 
     // If the image URL is empty, use a default placeholder image
-    const finalImageUrl = imageUrl || 'https://via.placeholder.com/150'; // Set your desired placeholder URL here
+    const finalImageUrl = imageUrl || 'https://picsum.photos/500'; // Set your desired placeholder URL here
 
     // Validate input
     if (!title || !finalImageUrl || !content) {

@@ -7,7 +7,8 @@ const Hero = () => {
     useEffect(() => {
 
         const url = "https://api.paperquotes.com/apiv1/qod/?lang=en";
-        const proxy = "https://cors-anywhere.herokuapp.com/";
+        // USED IN RANDOM ZEN QUOTE TO ALLOW FOR CORS HEADER IN API REQUESTS
+        // const proxy = "https://cors-anywhere.herokuapp.com/";
 
         axios(url)
             .then((response) => {
@@ -22,7 +23,7 @@ const Hero = () => {
     return (
         <section
             id="hero"
-            className="hero min-h-screen w-screen border-b-4 border-accent mb-4"
+            className="hero min-h-screen max-w-screen border-b-4 border-accent mb-4"
             style={{
                 backgroundImage: "url(https://picsum.photos/1200/800)",
             }}>

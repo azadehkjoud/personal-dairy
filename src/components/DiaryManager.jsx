@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import DiaryEntryCard from './DiaryEntryCard'; // Import the card component
 
 const DiaryManager = () => {
