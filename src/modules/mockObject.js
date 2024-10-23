@@ -1,3 +1,10 @@
+// const url = "https://api.paperquotes.com/apiv1/qod/?lang=en";
+// URLS WITH CORS HEADER THROUGH PROXY
+// const url = "https://favqs.com/api/qotd";
+// const url = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
+// const url = "https://zenquotes.io/api/random";
+// const proxy = "https://cors-anywhere.herokuapp.com/";
+
 export const mockObject = [
     {
         id: 1,

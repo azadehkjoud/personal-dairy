@@ -6,9 +6,7 @@ const Hero = () => {
 
     useEffect(() => {
 
-        const url = "https://api.paperquotes.com/apiv1/qod/?lang=en";
-        // USED IN RANDOM ZEN QUOTE TO ALLOW FOR CORS HEADER IN API REQUESTS
-        // const proxy = "https://cors-anywhere.herokuapp.com/";
+        const url = '/api/random';
 
         axios(url)
             .then((response) => {
@@ -34,9 +32,9 @@ const Hero = () => {
                     {quote && (
                         <div className="chat chat-start absolute right-4 max-w-64 bottom-10">
                             <div className="chat-header">
-                                {quote.author}
+                                {quote[0].a}
                             </div>
-                            <div className="chat-bubble chat-bubble-accent">{quote.quote}</div>
+                            <div className="chat-bubble chat-bubble-accent">{quote[0].q}</div>
                         </div>
                     )}
                 </div>
