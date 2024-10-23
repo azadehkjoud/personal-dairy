@@ -6,8 +6,8 @@ const Homepage = ({entries, updateEntry}) => {
     return (
         <>
             <Hero />
-            <main className="p-5 self-center w-full max-w-[1200px]">
-                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <main className="self-center w-full max-w-[80rem]">
+                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                     {entries.map((entry, index) => (
                         <DiaryEntryCard key={index} entry={entry} updateEntry={updateEntry}  />
                     ))}

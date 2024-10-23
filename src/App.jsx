@@ -33,7 +33,7 @@ function App() {
 
 }
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col max-w-screen">
             <Header addEntry={addEntry}  showModal={showModal} openModal={openModal} closeModal={closeModal} />
             <Homepage entries={entries} updateEntry={updateEntry} />
             <Footer />
