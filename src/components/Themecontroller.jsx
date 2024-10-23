@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Themecontroller = () => {
     return (
         <label className="swap swap-rotate">

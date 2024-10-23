@@ -23,7 +23,6 @@ function App() {
         closeModal();
     };
 
-
  // Function to update an entry when it's edited
  const updateEntry = (updatedEntry) => {
     setEntries((prevEntries) =>
