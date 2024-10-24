@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react';
-import Homepage from './pages/Homepage.jsx';
-import {mockObject} from './modules/mockObject.js';
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
+import {addToStorage, getLocalStorage, removeFromStorage, saveLocalStorage} from './modules/storage.js';
 import Layout from './Layout.jsx';
 import Journal from './pages/Journal.jsx';
-import {addToStorage, getLocalStorage, removeFromStorage, saveLocalStorage} from './modules/storage.js';
+import Homepage from './pages/Homepage.jsx';
+import {mockObject} from './modules/mockObject.js';
 
 function App() {
     const [entries, setEntries] = useState([]);
