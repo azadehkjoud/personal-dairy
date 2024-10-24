@@ -1,5 +1,5 @@
 // This modal will show the full diary entry when a card is clicked.
-const EntryModal = ({entry, closeModal, onEdit}) => { 
+const EntryModal = ({entry, setShowModal, onEdit}) => {
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-40">
             <div className="bg-white p-10 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 flex"> {/* Adjusted width and padding */} {/* Left side: Image */}
@@ -31,7 +31,7 @@ const EntryModal = ({entry, closeModal, onEdit}) => {
                         </button>
                         <button
                             className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400"
-                            onClick={closeModal}
+                            onClick={() => setShowModal(false)}
                         >
                             Close
                         </button>
