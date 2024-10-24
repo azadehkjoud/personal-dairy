@@ -8,14 +8,14 @@
 export const mockObject = [
     {
         id: 1,
-        date: '2024-10-23',
+        date: '2024-10-24',
         imageUrl: 'http://via.placeholder.com/500x500',
         title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
         content: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
     },
     {
         id: 2,
-        date: '2024-10-22',
+        date: '2024-10-25',
         imageUrl: 'http://via.placeholder.com/1280x700',
         title: "qui est esse",
         content: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
@@ -29,21 +29,21 @@ export const mockObject = [
     },
     {
         id: 4,
-        date: '2024-10-23',
+        date: '2024-10-25',
         imageUrl: 'http://via.placeholder.com/500x500',
         title: "eum et est occaecati",
         content: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
     },
     {
         id: 5,
-        date: '2024-10-22',
+        date: '2024-10-26',
         imageUrl: 'http://via.placeholder.com/500x750',
         title: "nesciunt quas odio",
         content: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
     },
     {
         id: 6,
-        date: '2024-10-23',
+        date: '2024-10-24',
         imageUrl: 'http://via.placeholder.com/1280x700',
         title: "dolorem eum magni eos aperiam quia",
         content: "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"

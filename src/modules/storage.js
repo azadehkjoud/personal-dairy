@@ -52,18 +52,18 @@ export const removeFromStorage = (storageName, storageItem) => {
     saveLocalStorage(storageName, updatedStorage);
 };
 
-
+/**
+ * Sorts a localStorage by 'date' in 'ascending' or 'descending' order
+ * @param {String} storageName the name of the localStorage to sort
+ * @param {String} sortBy the field to sort by. here: sort by 'date'
+ * @param {String} order 'ascending' or 'descending'
+ */
 const sortLocalStorageData = (storageName, sortBy, order) => {
-    const data = JSON.parse(localStorage.getItem(storageName));
-  
-    if (!data) {
-      return;
-    }
-  
-    data.sort((a, b) => {
-      const comparison = new Date(a[sortBy]) - new Date(b[sortBy]);
-      return order === 'descending' ? -comparison : comparison;
+    const storage = getLocalStorage(storageName);
+    if (!storage) return;
+    storage.sort((a, b) => {
+        const comparison = new Date(a[sortBy]) - new Date(b[sortBy]);
+        return order === 'descending' ? -comparison : comparison;
     });
-  
-    localStorage.setItem(storageName, JSON.stringify(data));
-  };
+    saveLocalStorage(storageName, storage);
+};

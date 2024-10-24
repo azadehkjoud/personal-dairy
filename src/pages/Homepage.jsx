@@ -1,13 +1,13 @@
+import {useEffect, useState} from 'react';
 import DiaryEntryCard from '../components/DiaryEntryCard.jsx';
 import Hero from '../components/Hero.jsx';
-import {useEffect, useState} from 'react';
 
 // This is the main page that will display all the diary entries and handle adding new entries
 const Homepage = ({entries, updateEntry}) => {
     const [limitEntries, setLimitEntries] = useState([]);
 
     useEffect(() => {
-        setLimitEntries(entries.slice(0, 12));
+        setLimitEntries(entries.slice(0, 6));
     }, [entries])
 
     return (
