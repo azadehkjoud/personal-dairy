@@ -25,7 +25,7 @@ const AddEntryModal = ({ closeModal, addEntry, entry }) => {
     const finalDate = date || currentDate; // Use selected date or today's date
 
     // If the image URL is empty, use a default placeholder image
-    const finalImageUrl = imageUrl || 'https://picsum.photos/500'; // Set your desired placeholder URL here
+    const finalImageUrl = imageUrl || 'http://via.placeholder.com/500x500'; // Set your desired placeholder URL here
 
     // Validate input
     if (!title || !finalImageUrl || !content) {

@@ -4,7 +4,7 @@ import Themecontroller from './Themecontroller.jsx';
 const Header = ({showModal, addEntry, openModal, closeModal}) => {
     return (
         <header className="flex justify-center items-center w-full fixed mt-4 z-40">
-            <nav className="navbar bg-base-100 max-w-[80rem] mx-4">
+            <nav className="navbar shadow-2xl bg-base-100 max-w-[80rem] mx-4 rounded-br-2xl rounded-tl-2xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">

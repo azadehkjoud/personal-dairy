@@ -5,7 +5,7 @@ const EntryModal = ({entry, closeModal, onEdit}) => {
             <div className="bg-white p-10 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 flex"> {/* Adjusted width and padding */} {/* Left side: Image */}
                 <div className="w-1/3">
                     <img
-                        src={entry.imageUrl || 'https://via.placeholder.com/150'}  // Default placeholder image if no imageUrl is provided
+                        src={entry.imageUrl || 'http://via.placeholder.com/500x500'}  // Default placeholder image if no imageUrl is provided
                         alt={entry.title}
                         className="object-cover w-full h-full"
                     />

@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import Homepage from './Homepage.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import {mockObject} from './modules/mockObject.js';
 
 function App() {
     const [entries, setEntries] = useState([]);
@@ -9,7 +10,8 @@ function App() {
 
     // Load entries from localStorage when the app loads
     useEffect(() => {
-        const savedEntries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
+        const savedEntries = mockObject;
+        // const savedEntries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
         setEntries(savedEntries);
     }, []);
 
@@ -23,20 +25,19 @@ function App() {
         closeModal();
     };
 
- // Function to update an entry when it's edited
- const updateEntry = (updatedEntry) => {
-    setEntries((prevEntries) =>
-      prevEntries.map((entry) =>
-        entry.id === updatedEntry.id ? updatedEntry : entry
-      )
-    );
+    // Function to update an entry when it's edited
+    const updateEntry = (updatedEntry) => {
+        setEntries((prevEntries) =>
+            prevEntries.map((entry) =>
+                entry.id === updatedEntry.id ? updatedEntry : entry,
+            ),
+        );
+    };
 
-}
     return (
         <div className="flex flex-col max-w-screen">
-            <Header addEntry={addEntry}  showModal={showModal} openModal={openModal} closeModal={closeModal} />
-            <Homepage entries={entries} updateEntry={updateEntry} />
-            <Footer />
+            <Header addEntry={addEntry} showModal={showModal} openModal={openModal} closeModal={closeModal} />
+            <Homepage entries={entries} updateEntry={updateEntry} /> <Footer />
         </div>
     );
 }
