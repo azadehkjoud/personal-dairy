@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import Homepage from './Homepage.jsx';
+import Homepage from './pages/Homepage.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import {mockObject} from './modules/mockObject.js';

@@ -1,5 +1,5 @@
-import DiaryEntryCard from './components/DiaryEntryCard.jsx';
-import Hero from './components/Hero.jsx';
+import DiaryEntryCard from '../components/DiaryEntryCard.jsx';
+import Hero from '../components/Hero.jsx';
 
 // This is the main page that will display all the diary entries and handle adding new entries
 const Homepage = ({entries, updateEntry}) => {
