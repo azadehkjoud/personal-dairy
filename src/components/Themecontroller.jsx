@@ -1,8 +1,8 @@
 const Themecontroller = () => {
     return (
-        <label className="swap swap-rotate">
+        <label htmlFor="theme-controller" className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
-            <input type="checkbox" className="theme-controller" value="business" />
+            <input type="checkbox" id="theme-controller" className="theme-controller" value="business" />
 
             {/* sun icon */}
             <svg

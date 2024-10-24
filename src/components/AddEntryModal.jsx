@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 // This modal will handle adding new diary entries.
 const AddEntryModal = ({ setShowModal, addEntry, entry }) => {
+  const [id, setId] = useState('');
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -10,6 +11,7 @@ const AddEntryModal = ({ setShowModal, addEntry, entry }) => {
   // If an entry is passed in, populate the form with the existing data (for editing)
   useEffect(() => {
     if (entry) {
+      setId(entry.id);
       setTitle(entry.title);
       setDate(entry.date);
       setImageUrl(entry.imageUrl);
@@ -19,6 +21,7 @@ const AddEntryModal = ({ setShowModal, addEntry, entry }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const finalId = id || crypto.randomUUID();
 
     // If no date is selected, set date to today's date
     const currentDate = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
@@ -35,6 +38,7 @@ const AddEntryModal = ({ setShowModal, addEntry, entry }) => {
 
     const updatedEntry = {
       ...entry, // Keep the same ID or other unchanged fields
+      id: finalId,
       title,
       date: finalDate,
       imageUrl: finalImageUrl,
@@ -49,27 +53,27 @@ const AddEntryModal = ({ setShowModal, addEntry, entry }) => {
       <div className="bg-white p-6 rounded-lg shadow-lg w-3/4 md:w-1/2">
         <h2 className="text-2xl font-bold mb-4">{entry ? 'Edit Entry' : 'Add New Entry'}</h2>
         <form onSubmit={handleSubmit}>
-          <input
+          <input name="form-title"
             className="border p-2 mb-2 w-full"
             type="text"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <input
+          <input name="form-date"
             className="border p-2 mb-2 w-full"
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
-          <input
+          <input name="form-imageurl"
             className="border p-2 mb-2 w-full"
             type="text"
             placeholder="Image URL"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
-          <textarea
+          <textarea name="form-content"
             className="border p-2 mb-2 w-full"
             placeholder="Content"
             value={content}
