@@ -21,11 +21,6 @@ function App() {
         setEntries(storedEntries);
     }, []);
 
-
-
-
-
-
     const addEntry = (newEntry) => {
         addToStorage('diaryEntries', newEntry);
         setEntries(() => getLocalStorage('diaryEntries'));
