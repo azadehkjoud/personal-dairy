@@ -8,7 +8,6 @@ import {addToStorage, getLocalStorage, removeFromStorage, saveLocalStorage} from
 
 function App() {
     const [entries, setEntries] = useState([]);
-    const [showModal, setShowModal] = useState(false);
 
     // Load entries from localStorage when the app loads
     useEffect(() => {
@@ -40,9 +39,9 @@ function App() {
 
     const router = createBrowserRouter(
         createRoutesFromElements(
-            <Route path="/" element={<Layout addEntry={addEntry} showModal={showModal} setShowModal={setShowModal} />}>
+            <Route path="/" element={<Layout addEntry={addEntry} />}>
                 <Route index element={<Homepage entries={entries} updateEntry={updateEntry} />} />
-                <Route path="journal" element={<Journal />} />
+                <Route path="journal" element={<Journal entries={entries} updateEntry={updateEntry} />} />
             </Route>
         )
     )

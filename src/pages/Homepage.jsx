@@ -7,7 +7,7 @@ const Homepage = ({entries, updateEntry}) => {
     const [limitEntries, setLimitEntries] = useState([]);
 
     useEffect(() => {
-        setLimitEntries(entries.slice(0, 12));
+        setLimitEntries(entries.slice(0, 6));
     }, [entries])
 
     return (
