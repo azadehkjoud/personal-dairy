@@ -16,14 +16,14 @@ export const mockObject = [
     {
         id: 2,
         date: '2024-10-22',
-        imageUrl: 'http://via.placeholder.com/500x500',
+        imageUrl: 'http://via.placeholder.com/750x500',
         title: "qui est esse",
         content: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
     },
     {
         id: 3,
         date: '2024-10-23',
-        imageUrl: 'http://via.placeholder.com/500x500',
+        imageUrl: 'http://via.placeholder.com/500x750',
         title: "ea molestias quasi exercitationem repellat qui ipsa sit aut",
         content: "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
     },
@@ -37,14 +37,14 @@ export const mockObject = [
     {
         id: 5,
         date: '2024-10-22',
-        imageUrl: 'http://via.placeholder.com/500x500',
+        imageUrl: 'http://via.placeholder.com/500x750',
         title: "nesciunt quas odio",
         content: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
     },
     {
         id: 6,
         date: '2024-10-23',
-        imageUrl: 'http://via.placeholder.com/500x500',
+        imageUrl: 'http://via.placeholder.com/750x500',
         title: "dolorem eum magni eos aperiam quia",
         content: "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
     },
@@ -65,7 +65,7 @@ export const mockObject = [
     {
         id: 9,
         date: '2024-10-10',
-        imageUrl: 'http://via.placeholder.com/500x500',
+        imageUrl: 'http://via.placeholder.com/500x750',
         title: "nesciunt iure omnis dolorem tempora et accusantium",
         content: "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
     },
@@ -79,14 +79,14 @@ export const mockObject = [
     {
         id: 11,
         date: '2024-10-23',
-        imageUrl: 'http://via.placeholder.com/500x500',
+        imageUrl: 'http://via.placeholder.com/750x500',
         title: "et ea vero quia laudantium autem",
         content: "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi"
     },
     {
         id: 12,
         date: '2024-10-23',
-        imageUrl: 'http://via.placeholder.com/500x500',
+        imageUrl: 'http://via.placeholder.com/500x750',
         title: "in quibusdam tempore odit est dolorem",
         content: "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
     },
