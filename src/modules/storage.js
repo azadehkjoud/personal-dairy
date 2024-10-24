@@ -30,7 +30,7 @@ export const isStored = (storageName, storageItem) => {
 };
 
 /**
- * Adds an item to the beginning of a corresponding localStorage
+ * Adds an item to the beginning of a corresponding localStorage and sorts the data
  * @param {String} storageName the name of the localStorage to add an item to
  * @param {Object} storageItem the item to add to localStorage
  */
@@ -38,6 +38,7 @@ export const addToStorage = (storageName, storageItem) => {
     const storage = getLocalStorage(storageName);
     const updatedStorage = [storageItem, ...storage];
     saveLocalStorage(storageName, updatedStorage);
+    sortLocalStorageData(storageName, 'date', 'descending');
 };
 
 /**
@@ -50,3 +51,19 @@ export const removeFromStorage = (storageName, storageItem) => {
     const updatedStorage = storage.filter((item) => item.id !== storageItem.id);
     saveLocalStorage(storageName, updatedStorage);
 };
+
+
+const sortLocalStorageData = (storageName, sortBy, order) => {
+    const data = JSON.parse(localStorage.getItem(storageName));
+  
+    if (!data) {
+      return;
+    }
+  
+    data.sort((a, b) => {
+      const comparison = new Date(a[sortBy]) - new Date(b[sortBy]);
+      return order === 'descending' ? -comparison : comparison;
+    });
+  
+    localStorage.setItem(storageName, JSON.stringify(data));
+  };
