@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
 import Homepage from './pages/Homepage.jsx';
 import {mockObject} from './modules/mockObject.js';
-
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
 import Layout from './Layout.jsx';
 import Journal from './pages/Journal.jsx';
