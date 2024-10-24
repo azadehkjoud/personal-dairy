@@ -44,7 +44,7 @@ const DiaryEntryCard = ({entry, updateEntry}) => {
             {/* View Entry Modal */} {showEntryModal && (
             <EntryModal
                 entry={entry}
-                closeModal={() => setShowEntryModal(false)}
+                setShowModal={() => setShowEntryModal(false)}
                 onEdit={handleEdit} // Opens the edit modal when clicked
             />
         )}
