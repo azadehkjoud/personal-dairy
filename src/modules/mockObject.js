@@ -16,7 +16,7 @@ export const mockObject = [
     {
         id: 2,
         date: '2024-10-22',
-        imageUrl: 'http://via.placeholder.com/750x500',
+        imageUrl: 'http://via.placeholder.com/1280x700',
         title: "qui est esse",
         content: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
     },
@@ -44,7 +44,7 @@ export const mockObject = [
     {
         id: 6,
         date: '2024-10-23',
-        imageUrl: 'http://via.placeholder.com/750x500',
+        imageUrl: 'http://via.placeholder.com/1280x700',
         title: "dolorem eum magni eos aperiam quia",
         content: "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
     },
@@ -79,7 +79,7 @@ export const mockObject = [
     {
         id: 11,
         date: '2024-10-23',
-        imageUrl: 'http://via.placeholder.com/750x500',
+        imageUrl: 'http://via.placeholder.com/1280x700',
         title: "et ea vero quia laudantium autem",
         content: "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi"
     },
