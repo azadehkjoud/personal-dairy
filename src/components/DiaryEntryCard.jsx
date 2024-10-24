@@ -7,20 +7,14 @@ const DiaryEntryCard = ({entry, updateEntry}) => {
     const [showEntryModal, setShowEntryModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
 
-    const openEntryModal = () => setShowEntryModal(true);
-    const closeEntryModal = () => setShowEntryModal(false);
-
-    const openEditModal = () => setShowEditModal(true);
-    const closeEditModal = () => setShowEditModal(false);
-
     const handleEdit = () => {
-        closeEntryModal(); // Close the entry view modal
-        openEditModal(); // Open the edit modal
+        setShowEntryModal(false);
+        setShowEditModal(true);
     };
 
     const handleUpdateEntry = (updatedEntry) => {
         updateEntry(updatedEntry); // Call the parent's update function
-        closeEditModal(); // Close the edit modal
+        setShowEditModal(false); // Close the edit modal
     };
 
     return (
@@ -40,7 +34,7 @@ const DiaryEntryCard = ({entry, updateEntry}) => {
 
                     </h2>
                     <p>{entry.date}</p>
-                    <button className="btn btn-primary" onClick={openEntryModal}>
+                    <button className="btn btn-primary" onClick={() => setShowEntryModal(true)}>
                         View Entry
                     </button>
 
@@ -50,14 +44,14 @@ const DiaryEntryCard = ({entry, updateEntry}) => {
             {/* View Entry Modal */} {showEntryModal && (
             <EntryModal
                 entry={entry}
-                closeModal={closeEntryModal}
+                closeModal={() => setShowEntryModal(false)}
                 onEdit={handleEdit} // Opens the edit modal when clicked
             />
         )}
 
             {/* Edit Entry Modal */} {showEditModal && (
             <AddEntryModal
-                closeModal={closeEditModal}
+                setShowModal={setShowEditModal}
                 addEntry={handleUpdateEntry} // Pass the updated entry to parent
                 entry={entry} // Pre-populate the form with the current entry data
             />

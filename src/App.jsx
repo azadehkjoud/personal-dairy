@@ -1,7 +1,5 @@
 import {useEffect, useState} from 'react';
 import Homepage from './pages/Homepage.jsx';
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
 import {mockObject} from './modules/mockObject.js';
 
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
@@ -24,9 +22,6 @@ function App() {
         setEntries(storedEntries);
     }, []);
 
-    const openModal = () => setShowModal(true);
-    const closeModal = () => setShowModal(false);
-
     const addEntry = (newEntry) => {
         addToStorage('diaryEntries', newEntry);
         setEntries(() => getLocalStorage('diaryEntries'));
@@ -46,19 +41,15 @@ function App() {
 
     const router = createBrowserRouter(
         createRoutesFromElements(
-            <Route path="/" element={<Layout />}>
-                <Route index element={<Homepage />} />
+            <Route path="/" element={<Layout addEntry={addEntry} showModal={showModal} setShowModal={setShowModal} />}>
+                <Route index element={<Homepage entries={entries} updateEntry={updateEntry} />} />
                 <Route path="journal" element={<Journal />} />
             </Route>
         )
     )
 
     return (
-        // <RouterProvider router={router} />
-        <div className="flex flex-col max-w-screen">
-            <Header addEntry={addEntry} showModal={showModal} openModal={openModal} closeModal={closeModal} />
-            <Homepage entries={entries} updateEntry={updateEntry} /> <Footer />
-        </div>
+        <RouterProvider router={router} />
     );
 }
 
