@@ -17,16 +17,6 @@ const AddEntryModal = ({entry, addEntry}) => {
         }
     }, [entry]);
 
-    useEffect(() => {
-        if (entry) {
-            setId(entry.id);
-            setTitle(entry.title);
-            setDate(entry.date);
-            setImageUrl(entry.imageUrl);
-            setContent(entry.content);
-        }
-    }, []);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const finalId = id || crypto.randomUUID();
