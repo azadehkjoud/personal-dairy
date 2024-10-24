@@ -23,7 +23,6 @@ function App() {
     const addEntry = (newEntry) => {
         addToStorage('diaryEntries', newEntry);
         setEntries(() => getLocalStorage('diaryEntries'));
-        setShowModal(false);
     }
 
     const updateEntry = (updatedEntry) => {
