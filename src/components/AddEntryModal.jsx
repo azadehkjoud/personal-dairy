@@ -44,7 +44,7 @@ const AddEntryModal = ({entry, addEntry}) => {
         };
 
         addEntry(updatedEntry); // Call either add or update
-        document.getElementById(entry ? 'edit' + entry.id : 'new-entry-modal').close()
+        document.getElementById(entry ? 'edit' + entry.id : 'new-entry-modal').close();
         clearForm();
     };
 
@@ -55,26 +55,26 @@ const AddEntryModal = ({entry, addEntry}) => {
             setDate('');
             setImageUrl('');
         }
-    }
+    };
 
     return (
-            <dialog id={entry ? 'edit' + entry.id : 'new-entry-modal'} className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                    <h2 className="text-2xl text-primary font-bold mb-4">{entry ? 'Edit Entry' : 'Add New Entry'}</h2>
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-                        <label className="input input-bordered flex items-center gap-2">Title: <input id="form-title" type="text" className="grow" placeholder="Title here..." required value={title} onChange={(e) => setTitle(e.target.value)} /></label>
-                        <label className="input input-bordered flex items-center gap-2">Date: <input id="form-date" type="date" className="grow" value={date} onChange={(e) => setDate(e.target.value)} /></label>
-                        <label className="input input-bordered flex items-center gap-2">Image: <input id="form-image-url" type="text" className="grow" placeholder="URL to image here..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} /></label>
-                        <textarea className="textarea textarea-bordered w-full" id="form-content" placeholder="Content..." required value={content} onChange={(e) => setContent(e.target.value)}></textarea>
-                        <button type="submit" className="btn btn-primary">
-                            {entry ? 'Update Entry' : 'Add Entry'}
-                        </button>
-                    </form>
-                    <form method="dialog">
-                        <button onClick={clearForm} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                    </form>
-                </div>
-            </dialog>
+        <dialog id={entry ? 'edit' + entry.id : 'new-entry-modal'} className="modal modal-bottom sm:modal-middle">
+            <div className="modal-box">
+                <h2 className="text-2xl text-primary font-bold mb-4">{entry ? 'Edit Entry' : 'Add New Entry'}</h2>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+                    <label className="input input-bordered flex items-center gap-2">Title: <input id="form-title" type="text" className="grow" placeholder="Title here..." required value={title} onChange={(e) => setTitle(e.target.value)} /></label>
+                    <label className="input input-bordered flex items-center gap-2">Date: <input id="form-date" type="date" className="grow" value={date} onChange={(e) => setDate(e.target.value)} /></label>
+                    <label className="input input-bordered flex items-center gap-2">Image: <input id="form-image-url" type="text" className="grow" placeholder="URL to image here..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} /></label>
+                    <textarea className="textarea textarea-bordered w-full" id="form-content" placeholder="Content..." required value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+                    <button type="submit" className="btn btn-primary">
+                        {entry ? 'Update Entry' : 'Add Entry'}
+                    </button>
+                </form>
+                <form method="dialog">
+                    <button onClick={clearForm} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+            </div>
+        </dialog>
     );
 };
 
