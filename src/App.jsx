@@ -4,37 +4,57 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import {mockObject} from './modules/mockObject.js';
 
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
+import Layout from './Layout.jsx';
+import Journal from './pages/Journal.jsx';
+import {addToStorage, getLocalStorage, removeFromStorage, saveLocalStorage} from './modules/storage.js';
+
 function App() {
     const [entries, setEntries] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
     // Load entries from localStorage when the app loads
     useEffect(() => {
-        const savedEntries = mockObject;
-        // const savedEntries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
-        setEntries(savedEntries);
+        // MOCK OBJECT CALL TO POPULATE LOCALSTORAGE - TODO: REMOVE LATER!
+        const storedEntries = mockObject;
+        saveLocalStorage('diaryEntries', storedEntries);
+
+        // CALL FROM LOCALSTORAGE TO POPULATE THE PAGE
+        // const storedEntries = getLocalStorage('diaryEntries');
+        setEntries(storedEntries);
     }, []);
 
     const openModal = () => setShowModal(true);
     const closeModal = () => setShowModal(false);
 
     const addEntry = (newEntry) => {
-        const updatedEntries = [newEntry, ...entries];
-        setEntries(updatedEntries);
-        localStorage.setItem('diaryEntries', JSON.stringify(updatedEntries));
-        closeModal();
-    };
+        addToStorage('diaryEntries', newEntry);
+        setEntries(() => getLocalStorage('diaryEntries'));
+        setShowModal(false);
+    }
 
-    // Function to update an entry when it's edited
     const updateEntry = (updatedEntry) => {
-        setEntries((prevEntries) =>
-            prevEntries.map((entry) =>
-                entry.id === updatedEntry.id ? updatedEntry : entry,
-            ),
-        );
-    };
+        removeFromStorage('diaryEntries', updatedEntry);
+        addToStorage('diaryEntries', updatedEntry);
+        setEntries(() => getLocalStorage('diaryEntries'));
+    }
+
+    const removeEntry = (entry) => {
+        removeFromStorage('diaryEntries', entry);
+        setEntries(() => getLocalStorage('diaryEntries'));
+    }
+
+    const router = createBrowserRouter(
+        createRoutesFromElements(
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Homepage />} />
+                <Route path="journal" element={<Journal />} />
+            </Route>
+        )
+    )
 
     return (
+        // <RouterProvider router={router} />
         <div className="flex flex-col max-w-screen">
             <Header addEntry={addEntry} showModal={showModal} openModal={openModal} closeModal={closeModal} />
             <Homepage entries={entries} updateEntry={updateEntry} /> <Footer />

@@ -30,14 +30,14 @@ export const isStored = (storageName, storageItem) => {
 };
 
 /**
- * Adds an item to a corresponding localStorage
+ * Adds an item to the beginning of a corresponding localStorage
  * @param {String} storageName the name of the localStorage to add an item to
  * @param {Object} storageItem the item to add to localStorage
  */
 export const addToStorage = (storageName, storageItem) => {
     const storage = getLocalStorage(storageName);
-    storage.push(storageItem.data);
-    saveLocalStorage(storageName, storage);
+    const updatedStorage = [storageItem, ...storage];
+    saveLocalStorage(storageName, updatedStorage);
 };
 
 /**
