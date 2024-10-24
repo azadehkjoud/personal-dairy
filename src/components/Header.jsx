@@ -1,7 +1,7 @@
 import AddEntryModal from './AddEntryModal.jsx';
 import Themecontroller from './Themecontroller.jsx';
 
-const Header = ({showModal, addEntry, openModal, closeModal}) => {
+const Header = ({addEntry, showModal, setShowModal}) => {
     return (
         <header className="flex justify-center items-center w-full fixed mt-4 z-40">
             <nav className="navbar shadow-2xl bg-base-100 max-w-[80rem] mx-4 rounded-br-2xl rounded-tl-2xl">
@@ -25,13 +25,13 @@ const Header = ({showModal, addEntry, openModal, closeModal}) => {
                     <button className="btn btn-ghost btn-circle hidden sm:block">
                         <Themecontroller />
                     </button>
-                    <button onClick={openModal} className="btn btn-ghost btn-circle">
+                    <button onClick={() => setShowModal(true)} className="btn btn-ghost btn-circle">
                         <i className="fa-solid fa-feather-pointed"></i>
                     </button>
                 </div>
             </nav>
 
-            {showModal && <AddEntryModal closeModal={closeModal} addEntry={addEntry} />}
+            {showModal && <AddEntryModal setShowModal={setShowModal} addEntry={addEntry} />}
         </header>
     );
 };

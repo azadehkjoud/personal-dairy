@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // This modal will handle adding new diary entries.
-const AddEntryModal = ({ closeModal, addEntry, entry }) => {
+const AddEntryModal = ({ setShowModal, addEntry, entry }) => {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -25,7 +25,7 @@ const AddEntryModal = ({ closeModal, addEntry, entry }) => {
     const finalDate = date || currentDate; // Use selected date or today's date
 
     // If the image URL is empty, use a default placeholder image
-    const finalImageUrl = imageUrl || 'http://via.placeholder.com/500x500'; // Set your desired placeholder URL here
+    const finalImageUrl = imageUrl || 'https://via.placeholder.com/500x500'; // Set your desired placeholder URL here
 
     // Validate input
     if (!title || !finalImageUrl || !content) {
@@ -78,7 +78,7 @@ const AddEntryModal = ({ closeModal, addEntry, entry }) => {
           <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded">
             {entry ? 'Update Entry' : 'Add Entry'}
           </button>
-          <button type="button" className="bg-red-500 text-white px-4 py-2 rounded ml-4" onClick={closeModal}>
+          <button type="button" className="bg-red-500 text-white px-4 py-2 rounded ml-4" onClick={() => setShowModal(false)}>
             Cancel
           </button>
         </form>
