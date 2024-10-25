@@ -1,10 +1,11 @@
 import {useEffect, useState} from 'react';
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
-import {addToStorage, getLocalStorage, removeFromStorage, saveLocalStorage} from './modules/storage.js';
+import {saveLocalStorage} from './modules/storage.js';
 import Layout from './Layout.jsx';
 import Journal from './pages/Journal.jsx';
 import Homepage from './pages/Homepage.jsx';
 import {mockObject} from './modules/mockObject.js';
+import {addEntry, updateEntry} from './modules/entryManagement.js';
 
 function App() {
     const [entries, setEntries] = useState([]);
@@ -20,22 +21,7 @@ function App() {
         setEntries(storedEntries);
     }, []);
 
-    const addEntry = (newEntry) => {
-        addToStorage('diaryEntries', newEntry);
-        setEntries(() => getLocalStorage('diaryEntries'));
-    }
-
-    const updateEntry = (updatedEntry) => {
-        removeFromStorage('diaryEntries', updatedEntry);
-        addToStorage('diaryEntries', updatedEntry);
-        setEntries(() => getLocalStorage('diaryEntries'));
-    }
-
-    const removeEntry = (entry) => {
-        removeFromStorage('diaryEntries', entry);
-        setEntries(() => getLocalStorage('diaryEntries'));
-    }
-
+    
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<Layout addEntry={addEntry} />}>
