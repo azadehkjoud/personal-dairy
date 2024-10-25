@@ -58,7 +58,7 @@ export const removeFromStorage = (storageName, storageItem) => {
  * @param {String} sortBy the field to sort by. here: sort by 'date'
  * @param {String} order 'ascending' or 'descending'
  */
-const sortLocalStorageData = (storageName, sortBy, order) => {
+export const sortLocalStorageData = (storageName, sortBy, order) => {
     const storage = getLocalStorage(storageName);
     if (!storage) return;
     storage.sort((a, b) => {

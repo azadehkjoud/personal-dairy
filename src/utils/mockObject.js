@@ -5,6 +5,10 @@
 // const url = "https://zenquotes.io/api/random";
 // const proxy = "https://cors-anywhere.herokuapp.com/";
 
+/**
+ * Mock Object to test functionality and compatability of our application. Contains certain edge case scenarios for testing.
+ * @type {[{id: number, date: string, imageUrl: string, title: string, content: string}]}
+ */
 export const mockObject = [
     {
         id: 1,

@@ -1,6 +1,12 @@
 import {useEffect, useState} from 'react';
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
-import {addToStorage, getLocalStorage, removeFromStorage, saveLocalStorage} from './utils/storage.js';
+import {
+    addToStorage,
+    getLocalStorage,
+    removeFromStorage,
+    saveLocalStorage,
+    sortLocalStorageData,
+} from './utils/storage.js';
 import {mockObject} from './utils/mockObject.js';
 import Layout from './Layout.jsx';
 import Journal from './pages/Journal.jsx';
@@ -9,15 +15,11 @@ import Homepage from './pages/Homepage.jsx';
 function App() {
     const [entries, setEntries] = useState([]);
 
-    // Load entries from localStorage when the app loads
+    // Populate entries state with objects out of localStorage
     useEffect(() => {
-        // MOCK OBJECT CALL TO POPULATE LOCALSTORAGE - TODO: REMOVE LATER!
-        const storedEntries = mockObject;
-        saveLocalStorage('diaryEntries', storedEntries);
-
-        // CALL FROM LOCALSTORAGE TO POPULATE THE PAGE
-        // const storedEntries = getLocalStorage('diaryEntries');
-        setEntries(storedEntries);
+        saveLocalStorage('diaryEntries', mockObject); // MOCK OBJECT CALL TO POPULATE LOCALSTORAGE - TODO: REMOVE LATER!
+        sortLocalStorageData('diaryEntries', 'date', 'descending'); // TEST OF SORTING ON LOAD - TODO: REMOVE LATER!
+        setEntries(getLocalStorage('diaryEntries'));
     }, []);
 
     /**
