@@ -4,7 +4,7 @@ import EntryModal from './EntryModal.jsx';
 const DiaryEntryCard = ({entry, updateEntry}) => {
     return (
         <>
-            <div className="card bg-base-100 max-w-96 shadow-xl hover:scale-105 transform transition duration-300 ease-in-out">
+            <div className="card bg-base-100 max-w-96 w-full shadow-xl hover:scale-105 transform transition duration-300 ease-in-out">
                 <figure className="overflow-hidden rounded-br-xl rounded-tl-xl p-5">
                     <div className="w-full h-64">
                         <img
