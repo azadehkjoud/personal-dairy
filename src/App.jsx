@@ -22,21 +22,21 @@ function App() {
 
     /**
      * Adds a new entry to the localStorage under 'diaryEntries' and updates the local state
-     * @param {Object} newEntry - The entry to be added, containing relevant data fields for a diary entry
+     * @param {Object} entry - The entry to be added, containing relevant data fields for a diary entry
      */
-    const addEntry = (newEntry) => {
-        addToStorage('diaryEntries', newEntry);
+    const addEntry = (entry) => {
+        addToStorage('diaryEntries', entry);
         setEntries(() => getLocalStorage('diaryEntries'));
     }
 
     /**
      * Updates an existing entry in localStorage under 'diaryEntries' by removing the old version and adding the updated one.
      * Updates the local state to reflect the changes.
-     * @param {Object} updatedEntry - The entry with updated values, replacing the old entry with matching identifier
+     * @param {Object} entry - The entry with updated values, replacing the old entry with matching identifier
      */
-    const updateEntry = (updatedEntry) => {
-        removeFromStorage('diaryEntries', updatedEntry);
-        addToStorage('diaryEntries', updatedEntry);
+    const updateEntry = (entry) => {
+        removeFromStorage('diaryEntries', entry);
+        addToStorage('diaryEntries', entry);
         setEntries(() => getLocalStorage('diaryEntries'));
     }
 
