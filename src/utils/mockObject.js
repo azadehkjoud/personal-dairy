@@ -37,14 +37,14 @@ export const mockObject = [
     {
         id: 5,
         date: '2024-10-26',
-        imageUrl: 'http://via.placeholder.com/500x750',
+        imageUrl: 'https://images.pexels.com/photos/12603220/pexels-photo-12603220.jpeg',
         title: "nesciunt quas odio",
         content: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
     },
     {
         id: 6,
         date: '2024-10-24',
-        imageUrl: 'http://via.placeholder.com/1280x700',
+        imageUrl: 'https://images.pexels.com/photos/28435299/pexels-photo-28435299/free-photo-of-autumn-red-squirrel-on-leaf-covered-path.jpeg',
         title: "dolorem eum magni eos aperiam quia",
         content: "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae",
     },
