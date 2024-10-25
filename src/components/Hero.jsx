@@ -37,14 +37,15 @@ const Hero = ({entries}) => {
                     </div>
                 )}
                 </div>
-
-                <div className="stats bg-transparent">
-                    <div className="stat text-primary">
-                        <div className="stat-title text-white">You wrote</div>
-                        {entries && (<div className="stat-value">{entries.length}</div>)}
-                        <div className="stat-title text-white">lines already</div>
+                {entries && (
+                    <div className="stats bg-transparent">
+                        <div className="stat text-primary">
+                            <div className="stat-title text-white">You wrote</div>
+                            <div className="stat-value">{entries.length}</div>
+                            <div className="stat-title text-white">lines already</div>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </section>
     );
