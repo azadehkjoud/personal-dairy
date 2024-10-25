@@ -1,10 +1,17 @@
 import AddEntryModal from './AddEntryModal.jsx';
 
-const EntryModal = ({entry, updateEntry}) => {
+const EntryModal = ({entry, updateEntry, removeEntry}) => {
     const openEdit = () => {
         document.getElementById('show' + entry.id).close();
         document.getElementById('edit' + entry.id).showModal();
     };
+
+    // TODO: NEEDS VALIDATION
+    const deleteEntry = () => {
+        document.getElementById('show' + entry.id).close();
+        removeEntry(entry);
+        alert('Entry deleted!');
+    }
 
     return (
         <>
@@ -22,19 +29,21 @@ const EntryModal = ({entry, updateEntry}) => {
                                 className="object-cover w-full h-full rounded-br-xl rounded-tl-xl"
                             />
                         </figure>
-                        <div className="h-full w-full sm:w-2/3 flex flex-col gap-2">
-                            <h2 className="font-bold text-2xl">{entry.title}</h2>
-                            <p className="text-sm opacity-50">{entry.date}</p>
-                            <p className="text-lg">{entry.content}</p>
+                        <div className="w-full sm:w-2/3 flex flex-col gap-2">
+                            <div className="self-start">
+                                <h2 className="font-bold text-2xl">{entry.title}</h2>
+                                <p className="text-sm opacity-50">{entry.date}</p>
+                                <p className="text-lg">{entry.content}</p>
+                            </div>
 
-                            <div className="flex flex-row gap-2 justify-self-end self-end">
-                                <button className="btn btn-secondary">
+                            <footer className="flex flex-row gap-2 self-end">
+                                <button className="btn btn-secondary" onClick={() => deleteEntry()}>
                                     Delete Entry
                                 </button>
                                 <button className="btn btn-primary" onClick={() => openEdit()}>
                                     Edit Entry
                                 </button>
-                            </div>
+                            </footer>
                         </div>
                     </div>
                 </div>

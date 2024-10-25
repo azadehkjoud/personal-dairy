@@ -1,7 +1,7 @@
 import EntryModal from './EntryModal.jsx';
 
 // This component will display individual diary entries as cards.
-const DiaryEntryCard = ({entry, updateEntry}) => {
+const DiaryEntryCard = ({entry, updateEntry, removeEntry}) => {
     return (
         <>
             <div className="card bg-base-100 max-w-96 w-full shadow-xl hover:scale-105 transform transition duration-300 ease-in-out">
@@ -30,6 +30,7 @@ const DiaryEntryCard = ({entry, updateEntry}) => {
             <EntryModal
                 entry={entry}
                 updateEntry={updateEntry}
+                removeEntry={removeEntry}
             />
         </>
     );

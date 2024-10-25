@@ -53,7 +53,7 @@ function App() {
 
     const router = createBrowserRouter(
         createRoutesFromElements(
-            <Route path="/" element={<Layout addEntry={addEntry} entries={entries} updateEntry={updateEntry} />}>
+            <Route path="/" element={<Layout entries={entries} addEntry={addEntry} updateEntry={updateEntry} removeEntry={removeEntry} />}>
                 <Route index element={<Homepage />} />
                 <Route path="journal" element={<Journal />} />
             </Route>,
