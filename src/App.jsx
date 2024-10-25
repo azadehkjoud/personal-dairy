@@ -38,12 +38,12 @@ function App() {
 
     const router = createBrowserRouter(
         createRoutesFromElements(
-            <Route path="/" element={<Layout addEntry={addEntry} />}>
-                <Route index element={<Homepage entries={entries} updateEntry={updateEntry} />} />
-                <Route path="journal" element={<Journal entries={entries} updateEntry={updateEntry} />} />
-            </Route>
-        )
-    )
+            <Route path="/" element={<Layout addEntry={addEntry} entries={entries} updateEntry={updateEntry} />}>
+                <Route index element={<Homepage />} />
+                <Route path="journal" element={<Journal />} />
+            </Route>,
+        ),
+    );
 
     return (
         <RouterProvider router={router} />
