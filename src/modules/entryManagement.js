@@ -1,13 +1,10 @@
+// HELPER FUNCTIONS RELATED TO ENTRY MANAGEMENT: REQUIRES setEntries STATE FUNCTION!
 import {addToStorage, getLocalStorage, removeFromStorage} from './storage.js';
-
-
-
 
 /**
  * Adds a new entry to the localStorage under 'diaryEntries' and updates the local state
  * @param {Object} newEntry - The entry to be added, containing relevant data fields for a diary entry
  */
-
 export const addEntry = (newEntry) => {
     addToStorage('diaryEntries', newEntry);
     setEntries(() => getLocalStorage('diaryEntries'));
@@ -18,13 +15,11 @@ export const addEntry = (newEntry) => {
  * Updates the local state to reflect the changes.
  * @param {Object} updatedEntry - The entry with updated values, replacing the old entry with matching identifier
  */
-
 export const updateEntry = (updatedEntry) => {
     removeFromStorage('diaryEntries', updatedEntry);
     addToStorage('diaryEntries', updatedEntry);
     setEntries(() => getLocalStorage('diaryEntries'));
 }
-
 
 /**
  * Removes an entry from localStorage under 'diaryEntries' and updates the local state

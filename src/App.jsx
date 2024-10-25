@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react';
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
 import {saveLocalStorage} from './modules/storage.js';
+import {addEntry, updateEntry} from './modules/entryManagement.js';
 import Layout from './Layout.jsx';
 import Journal from './pages/Journal.jsx';
 import Homepage from './pages/Homepage.jsx';
 import {mockObject} from './modules/mockObject.js';
-import {addEntry, updateEntry} from './modules/entryManagement.js';
 
 function App() {
     const [entries, setEntries] = useState([]);
@@ -21,7 +21,6 @@ function App() {
         setEntries(storedEntries);
     }, []);
 
-    
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<Layout addEntry={addEntry} entries={entries} updateEntry={updateEntry} />}>
