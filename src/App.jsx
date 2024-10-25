@@ -27,7 +27,7 @@ function App() {
     const addEntry = (entry) => {
         addToStorage('diaryEntries', entry);
         setEntries(() => getLocalStorage('diaryEntries'));
-    }
+    };
 
     /**
      * Updates an existing entry in localStorage under 'diaryEntries' by removing the old version and adding the updated one.
@@ -38,7 +38,7 @@ function App() {
         removeFromStorage('diaryEntries', entry);
         addToStorage('diaryEntries', entry);
         setEntries(() => getLocalStorage('diaryEntries'));
-    }
+    };
 
     /**
      * Removes an entry from localStorage under 'diaryEntries' and updates the local state
@@ -47,7 +47,7 @@ function App() {
     const removeEntry = (entry) => {
         removeFromStorage('diaryEntries', entry);
         setEntries(() => getLocalStorage('diaryEntries'));
-    }
+    };
 
     const router = createBrowserRouter(
         createRoutesFromElements(
